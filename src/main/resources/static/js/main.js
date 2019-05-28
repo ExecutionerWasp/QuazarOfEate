@@ -7,6 +7,7 @@ function getIndex(list, id) {
     return -1;
 }
 
+
 var productApi = Vue.resource('/product{/id}');
 
 Vue.component('product-form', {
