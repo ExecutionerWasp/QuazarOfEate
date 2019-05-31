@@ -1,5 +1,5 @@
 <template>
-    <div class="basket">
+    <div id="basket">
         <div class="ordered">
             <div class="row" v-for="advert in adverts">
                 <i>{{advert.id}}</i>
@@ -12,9 +12,9 @@
 </template>
 
 <script>
-    import axios from 'axios';
+    import Vue from "vue";
 
-    Vue.component('Basket', {
+    Vue.component('basket', {
         data() {
             return{
                 adverts:[]
@@ -26,19 +26,13 @@
         el: '#basket',
         methods: {
             onToOrder() {
-                axios
-                    .get('/basket/list')
-                    .then(response => (this.basket = response));
             },
             onClear() {
-                axios
-                    .get('/basket/clear')
-                    .then(response => (this.basket = response));
             }
         }
     }
 </script>
 
-<style scoped>
+<style>
 
 </style>

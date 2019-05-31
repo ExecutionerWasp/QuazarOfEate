@@ -1,6 +1,6 @@
 package org.eateorder.app.service;
 
-import org.eateorder.app.model.Product;
+import org.eateorder.app.model.Advert;
 
 import java.util.List;
 
@@ -9,13 +9,13 @@ import java.util.List;
  **/
 public interface ProductService {
 
-    Product save(Product product);
+    Advert save(Advert advert);
 
-    void delete(Product product);
+    void delete(Advert advert);
 
-    List<Product> findAll();
+    List<Advert> findAll();
 
-    Product findById(long id);
+    Advert findById(long id);
 
     void deleteById(String id);
 }

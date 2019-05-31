@@ -1,6 +1,6 @@
 package org.eateorder.app.service.impl;
 
-import org.eateorder.app.model.Product;
+import org.eateorder.app.model.Advert;
 import org.eateorder.app.repos.ProductRepos;
 import org.eateorder.app.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,22 +22,22 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product save(Product product) {
-        return productRepos.save(product);
+    public Advert save(Advert advert) {
+        return productRepos.save(advert);
     }
 
     @Override
-    public void delete(Product product) {
-        productRepos.delete(product);
+    public void delete(Advert advert) {
+        productRepos.delete(advert);
     }
 
     @Override
-    public List<Product> findAll() {
+    public List<Advert> findAll() {
         return productRepos.findAll();
     }
 
     @Override
-    public Product findById(long id) {
+    public Advert findById(long id) {
         return productRepos.findById(id);
     }
 

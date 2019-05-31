@@ -1,15 +1,14 @@
 package org.eateorder.app.model;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * @author Alvin
  **/
 
 @Entity
-@Table(name = "products")
-public class Product {
+@Table(name = "adverts")
+public class Advert {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,14 +19,10 @@ public class Product {
     private double price;
     private String imgUrl;
 
-    @JoinColumn(name = "product_type_id")
-    @OneToMany(fetch = FetchType.EAGER)
-    private List<ProductType> productType;
-
-    public Product() {
+    public Advert() {
     }
 
-    public Product(String name, String description, double price, String imgUrl) {
+    public Advert(String name, String description, double price, String imgUrl) {
         this.name = name;
         this.description = description;
         this.price = price;

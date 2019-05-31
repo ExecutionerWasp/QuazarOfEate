@@ -1,30 +1,22 @@
 <template>
-    <div id="adverts" v-for="advert in adverts">
-        <Advert get-advert="{{advert}}"/>
+    <div id="adverts" :for="item in list">
+        <advert :get="item"/>
     </div>
 </template>
 <script lang="js">
-    import axios from 'axios';
+    import Vue from "vue"
+    import Advert from "views/Advert.vue"
 
-    Vue.component('Advert-list', {
+
+    Vue.component('advert-list', {
         props: ['list'],
-        data() {
-            return {
-                adverts: this.list
-            }
-        }
     })
-
     export default {
         methods: {
             onToOrder() {
-                axios
-                    .post('/basket/add', advert)
-                    .then(response => (this.basket = response))
             }
         }
     }
-
 </script>
 <style>
 </style>

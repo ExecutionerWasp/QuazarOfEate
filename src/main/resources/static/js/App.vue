@@ -1,28 +1,33 @@
 <template>
-    <div class="basket">
-        <input type="button" name="basket" value="Basket" @onclick="" />
+    <div class="container">
+        <h1>You Are Welcome</h1>
+        <h3>Quasar Of Eating</h3>
+        <input type="button" name="basket" value="Basket" @onclick="onToBasket" />
+        <advert-list :list="this.list"/>
     </div>
-    <AdvertList list="{{list}}"/>
 </template>
 
 <script>
-    import axios from "axios";
-
+    import axios from "axios"
+    import Adverts from "views/Adverts.vue"
     export default {
+        name: 'app',
         data() {
-            list: axios
-                .get('/advert/list')
-                .then(response => (this.basket = response))
+            return {
+                list: frontendData
+            }
         },
 
         methods: {
             onToBasket() {
                 axios
-                    .get('/basket');
+                    .post('/basket')
             }
         }
     }
-
 </script>
+<style>
+
+</style>
 
 
