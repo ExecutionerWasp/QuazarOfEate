@@ -1,6 +1,7 @@
 package org.eateorder.app.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author Alvin
@@ -8,7 +9,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "adverts")
-public class Advert {
+public class Advert implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
