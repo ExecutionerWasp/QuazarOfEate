@@ -18,6 +18,7 @@ public class Advert implements Serializable {
     private String name;
     private String description;
     private double price;
+    @Column(length = 2000)
     private String imgUrl;
 
     public Advert() {
